@@ -86,7 +86,10 @@ Authentication
 All protected endpoints require JWT token:
 Authorization: Bearer {token}
 
-User Endpoints
+
+🛠️User Endpoints
+
+
 Register
 httpPOST /api/users/register
 json{
@@ -96,6 +99,7 @@ json{
   "role": "admin"
 }
 Response: { "success": true, "token": "...", "user": {...} }
+
 
 Login
 httpPOST /api/users/login
@@ -110,11 +114,15 @@ httpGET /api/users/me
 Authorization: Bearer {token}
 Response: { "success": true, "user": {...} }
 
-Expense Endpoints
+
+🛠️Expense Endpoints
+
+
 Get All Expenses
 httpGET /api/expenses/all
 Authorization: Bearer {token}
 Response: { "success": true, "expenses": [...] }
+
 
 Create Expense
 httpPOST /api/expenses/create
@@ -129,9 +137,13 @@ json{
 }
 Response: { "success": true, "message": "Expense added successfully", "data": {...} }
 
+
+
 Get Expense (For Edit)
 httpGET /api/expenses/edit/:id
 Response: { "success": true, "expense": {...} }
+
+
 
 Update Expense
 httpPUT /api/expenses/edit/:id
@@ -145,6 +157,8 @@ json{
   "branch": "Main"
 }
 Response: { "success": true, "message": "Expense updated successfully", "expense": {...} }
+
+
 
 Delete Expense
 httpDELETE /api/expenses/delete/:id
