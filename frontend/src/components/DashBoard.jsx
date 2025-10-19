@@ -168,7 +168,9 @@ export default function Dashboard() {
             <button onClick={() => navigate("/expenses/add")} className="btn btn-primary">
               + Create Expense
             </button>
-            <a href="/expenses/all" className="btn btn-primary">View All Expenses</a>
+            <button onClick={() => navigate("/expenses/all")} className="btn btn-primary">
+              All Expenses
+            </button>
           </div>
         )}
       </div>
