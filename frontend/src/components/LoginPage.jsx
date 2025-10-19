@@ -89,9 +89,9 @@ export default function LoginPage() {
 
         <div className="signup-text">
           Don’t have an account?{" "}
-          <a href="/signup" className="signup-link">
-            Sign up
-          </a>
+          <button className="back-btn" onClick={() => navigate("/signup")} aria-label="Go back">
+            ← Back
+          </button>
         </div>
       </div>
     </div>
