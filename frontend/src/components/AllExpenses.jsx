@@ -87,6 +87,7 @@ export default function AllExpenses() {
   return (
     <div className="all-expenses-container">
       <div className="expenses-header">
+        <h2>All Expenses</h2>
         <button 
           className="back-btn" 
           onClick={() => navigate("/dashboard")}
@@ -94,7 +95,7 @@ export default function AllExpenses() {
         >
           ← Back
         </button>
-        <h2>All Expenses</h2>
+        
       </div>
 
       {/* Search Bar */}
