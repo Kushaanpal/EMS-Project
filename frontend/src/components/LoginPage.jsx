@@ -90,7 +90,7 @@ export default function LoginPage() {
         <div className="signup-text">
           Don’t have an account?{" "}
           <button className="back-btn" onClick={() => navigate("/signup")} aria-label="Go back">
-            ← Back
+            signup
           </button>
         </div>
       </div>
