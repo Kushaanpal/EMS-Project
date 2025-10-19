@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../styles/AllExpenses.css";
+import { API_BASE_URL } from "../utils";
 import { useNavigate } from "react-router-dom";
 
 export default function AllExpenses() {
@@ -16,7 +17,7 @@ export default function AllExpenses() {
   const fetchExpenses = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("http://localhost:5000/api/expenses/all", {
+      const res = await axios.get(`${API_BASE_URL}/api/expenses/all`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setExpenses(res.data.expenses);
@@ -61,7 +62,7 @@ export default function AllExpenses() {
     setDeleting(id);
     try {
       await axios.delete(
-        `http://localhost:5000/api/expense/${id}`,
+        `${API_BASE_URL}/api/expense/${id}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }

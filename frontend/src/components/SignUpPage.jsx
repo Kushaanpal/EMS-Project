@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { API_BASE_URL } from "../utils";
 import "../styles/LoginPages.css";
 
 export default function SignupPage() {
@@ -11,7 +12,7 @@ export default function SignupPage() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState("");
 
-  const API_URL = "http://localhost:5000/api/users/signup";
+  const API_URL = `${API_BASE_URL}/api/users/signup`;
 
   const handleSignup = async (e) => {
     e.preventDefault();

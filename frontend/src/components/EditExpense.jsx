@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import { API_BASE_URL } from "../utils";
 import "../styles/AddExpense.css";
 
 const CATEGORIES = ["Rent", "Electricity", "Groceries", "Maintenance", "Salary", "Miscellaneous"];
@@ -30,7 +31,7 @@ export default function EditExpense() {
     const fetchExpense = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/expenses/edit/${id}`,
+          `${API_BASE_URL}/api/expenses/edit/${id}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -85,7 +86,7 @@ export default function EditExpense() {
 
       // Send request to backend
       const response = await axios.put(
-        `http://localhost:5000/api/expenses/edit/${id}`,
+        `${API_BASE_URL}/api/expenses/edit/${id}`,
         {
           title: formData.title,
           category: formData.category,

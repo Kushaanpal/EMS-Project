@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../styles/AddExpense.css";
+import { API_BASE_URL } from "../utils";
 
 const CATEGORIES = ["Rent", "Electricity", "Groceries", "Maintenance", "Salary", "Miscellaneous"];
 
@@ -45,7 +46,7 @@ export default function AddExpense() {
 
       // Send request to backend
       const response = await axios.post(
-        "http://localhost:5000/api/expenses/create", 
+        `${API_BASE_URL}/api/expenses/create`, 
         {
           title: formData.title,
           category: formData.category,
