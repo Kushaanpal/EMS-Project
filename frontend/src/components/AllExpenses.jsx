@@ -62,7 +62,7 @@ export default function AllExpenses() {
     setDeleting(id);
     try {
       await axios.delete(
-        `${API_BASE_URL}/api/expense/delete/${id}`,
+        `${API_BASE_URL}/api/expenses/delete/${id}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
