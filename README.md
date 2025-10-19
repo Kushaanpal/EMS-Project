@@ -90,7 +90,7 @@ Authorization: Bearer {token}
 🛠️User Endpoints
 
 
-Register
+1.Register
 httpPOST /api/users/register
 json{
   "name": "John Doe",
@@ -101,7 +101,7 @@ json{
 Response: { "success": true, "token": "...", "user": {...} }
 
 
-Login
+2.Login
 httpPOST /api/users/login
 json{
   "email": "john@example.com",
@@ -109,7 +109,7 @@ json{
 }
 Response: { "success": true, "token": "...", "user": {...} }
 
-Get Current User
+3.Get Current User
 httpGET /api/users/me
 Authorization: Bearer {token}
 Response: { "success": true, "user": {...} }
@@ -118,13 +118,13 @@ Response: { "success": true, "user": {...} }
 🛠️Expense Endpoints
 
 
-Get All Expenses
+1.Get All Expenses
 httpGET /api/expenses/all
 Authorization: Bearer {token}
 Response: { "success": true, "expenses": [...] }
 
 
-Create Expense
+2.Create Expense
 httpPOST /api/expenses/create
 Authorization: Bearer {token}
 json{
@@ -139,13 +139,13 @@ Response: { "success": true, "message": "Expense added successfully", "data": {.
 
 
 
-Get Expense (For Edit)
+3.Get Expense (For Edit)
 httpGET /api/expenses/edit/:id
 Response: { "success": true, "expense": {...} }
 
 
 
-Update Expense
+4.Update Expense
 httpPUT /api/expenses/edit/:id
 Authorization: Bearer {token}
 json{
@@ -160,7 +160,7 @@ Response: { "success": true, "message": "Expense updated successfully", "expense
 
 
 
-Delete Expense
+5.Delete Expense
 httpDELETE /api/expenses/delete/:id
 Authorization: Bearer {token}
 Response: { "success": true, "message": "Expense deleted successfully", "expenseId": "..." }
